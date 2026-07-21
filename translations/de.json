@@ -2,80 +2,101 @@
   "language": "de",
   "languageName": "Deutsch",
   "title": "Datenschutzerklärung",
-  "intro": "Diese Datenschutzerklärung gilt für die TimePro-App (hierin als \"Anwendung\" bezeichnet) für mobile Geräte, die von Thompson Costa Honorato (hierin als \"Dienstanbieter\" bezeichnet) als kommerzieller Service erstellt wurde. Dieser Service ist zur Nutzung \"WIE BESEHEN\" bestimmt.",
+  "ui": {
+    "heroBadge": "DATENSCHUTZERKLÄRUNG",
+    "heroTitle": "Ihre Privatsphäre ist wichtig",
+    "heroDescription": "TimePro speichert Ihre Daten auf Ihrem Gerät. Wenn Sie die iCloud-Synchronisierung aktivieren, werden unterstützte Datensätze außerdem in Ihrer privaten iCloud-Datenbank gespeichert.",
+    "backToSupport": "Zurück zum Support",
+    "backToSupportAriaLabel": "Zurück zur Supportseite"
+  },
+  "intro": "Diese Datenschutzerklärung erläutert, wie die mobile TimePro-App (die \"Anwendung\"), entwickelt von Thompson Costa Honorato (dem \"Dienstanbieter\"), Informationen speichert und verarbeitet. TimePro ist ein kommerzieller Dienst, der \"WIE BESEHEN\" bereitgestellt wird.",
   "sections": [
     {
-      "title": "Welche Informationen erhält die Anwendung und wie werden sie verwendet?",
+      "title": "Welche Informationen verarbeitet die Anwendung?",
       "content": [
-        "Die Anwendung speichert Benutzereinstellungen und Berechnungsverläufe lokal auf Ihrem Gerät unter Verwendung von UserDefaults. Diese Daten verbleiben ausschließlich auf Ihrem Gerät und werden nicht an externe Server übertragen. Diese lokalen Daten werden verwendet, um die Kernfunktionalität der App bereitzustellen, einschließlich der Speicherung Ihrer bevorzugten Einstellungen und der Aufrechterhaltung eines Verlaufs Ihrer Berechnungen.",
-        "Nur für Kundensupport-Zwecke, wenn Sie sich dafür entscheiden, den Support über die E-Mail-Funktion der App zu kontaktieren, können die folgenden Geräteinformationen in Ihrer Support-E-Mail enthalten sein, um uns bei der besseren Unterstützung zu helfen:",
+        "Die Anwendung speichert Informationen, die Sie bei der Nutzung ihrer Funktionen eingeben oder erzeugen:",
         {
           "type": "list",
           "items": [
-            "Gerätemodell (z.B. iPhone 15 Pro)",
-            "iOS-Version (z.B. iOS 17.0)",
-            "App-Version",
-            "Geräte-Locale/Spracheinstellungen"
+            "Mit UserDefaults gespeicherte Einstellungen und Konfigurationen, beispielsweise für Sprache, Formatierung, Berechnung, Ton, haptisches Feedback, Export und Synchronisierung.",
+            "Mit Core Data gespeicherter Berechnungsverlauf, einschließlich Ausdrücken, Ergebnissen, Zwischenschritten, Gruppierungsinformationen und Zeitstempeln.",
+            "Mit Core Data gespeicherte Arbeitsdaten, einschließlich gespeicherter Tätigkeitsbezeichnungen, Stundensätze, Währungen, Standardarbeitszeiten und -pausen, Arbeitstage und -zeiten, Dauer, Zahlungsstatus, Zahlungseinträge, Archivierungsstatus und Notizen.",
+            "Mit Core Data gespeicherte Geburtstagseinträge, einschließlich Namen, Geburtsdaten und Notizen."
           ]
         },
-        "Diese Geräteinformationen werden nur geteilt, wenn Sie freiwillig eine Support-E-Mail senden, und werden ausschließlich zur Bereitstellung technischer Hilfe verwendet. Keine persönlichen Identifikatoren werden gesammelt oder übertragen, es sei denn, Sie entscheiden sich, diese in Ihrer Support-Nachricht einzufügen."
+        "Zahlungseinträge sind Informationen, die Sie eingeben, um Arbeitseinkünfte und Zahlungen zu verwalten. TimePro fordert weder Zahlungskartennummern, Zugangsdaten für Bankkonten noch andere Zahlungszugangsdaten an und speichert diese auch nicht."
       ]
     },
     {
-      "title": "Lokale Datenspeicherung",
+      "title": "Lokale Speicherung und optionale iCloud-Synchronisierung",
       "content": [
-        "Die Anwendung speichert Einstellungen und Berechnungsverläufe lokal auf Ihrem Gerät. Diese Daten sind nur für die Anwendung zugänglich und werden gelöscht, wenn Sie die Anwendung deinstallieren. Keine persönlichen Identifikatoren sind mit diesen Daten verknüpft."
+        "TimePro speichert Ihre Einstellungen und Datensätze lokal auf Ihrem Gerät, damit die Anwendung ohne Konto oder Verbindung zu einem vom Entwickler betriebenen Server funktioniert.",
+        "Wenn Ihnen die iCloud-Synchronisierung zur Verfügung steht und Sie diese aktivieren, werden die oben beschriebenen Core Data-Datensätze automatisch über Apples CloudKit-Dienst hoch- und heruntergeladen. Sie werden in Ihrer privaten iCloud-Datenbank gespeichert und auf Geräten bereitgestellt, die mit demselben Apple Account angemeldet sind.",
+        "In UserDefaults gespeicherte Einstellungen sind nicht Teil der CloudKit-Synchronisierung von TimePro.",
+        "Wenn Sie die iCloud-Synchronisierung deaktivieren, können Sie wählen, ob Sie die zuvor synchronisierten Daten in iCloud behalten oder aus iCloud löschen möchten."
       ]
     },
     {
-      "title": "Sammelt die Anwendung präzise Echtzeitstandortinformationen des Geräts?",
+      "title": "Wie werden Informationen verwendet?",
       "content": [
-        "Diese Anwendung sammelt keine präzisen Informationen über den Standort Ihres mobilen Geräts."
+        "Die Informationen werden ausschließlich zur Bereitstellung der Funktionen der Anwendung verwendet. Dazu zählen Berechnungen, Verlauf, Arbeits- und Einkommensdaten, Geburtstagsberechnungen, Berichte und Exporte, die Wiederherstellung von Einstellungen, die Verwaltung der Premium-Berechtigung sowie die optionale Synchronisierung zwischen Ihren Geräten."
       ]
     },
     {
-      "title": "Sehen Drittparteien die von der Anwendung erhaltenen Informationen und/oder haben Zugang dazu?",
+      "title": "Weitergabe und externe Dienste",
       "content": [
-        "Keine Daten werden automatisch mit Drittparteien geteilt. Alle Benutzereinstellungen und Berechnungsverläufe werden lokal auf Ihrem Gerät gespeichert und nicht anderweitig übertragen.",
-        "Wenn Sie freiwillig eine Support-E-Mail über die App senden, können Geräteinformationen (Gerätemodell, iOS-Version, App-Version und Locale-Einstellungen) in Ihrer E-Mail an Ihren E-Mail-Anbieter und unser Support-Team weitergegeben werden. Diese Informationen werden nur geteilt, wenn Sie sich entscheiden, den Support zu kontaktieren, und werden ausschließlich zur Bereitstellung technischer Hilfe verwendet."
+        "Der Dienstanbieter betreibt keinen Server, der den Inhalt Ihrer lokal gespeicherten Datensätze empfängt, bindet keine Werbe- oder Analysedienste von Drittanbietern in TimePro ein, verkauft Ihre Daten nicht, nutzt sie nicht zu Werbezwecken und verwendet sie nicht, um Sie über Apps oder Websites hinweg zu verfolgen.",
+        "Wenn die iCloud-Synchronisierung aktiviert ist, verarbeitet Apple die synchronisierten Datensätze in Ihrem Auftrag über CloudKit. Apple-Dienste können außerdem die technischen Kennungen und Synchronisierungsmetadaten verarbeiten, die für den Betrieb und den Schutz des Dienstes erforderlich sind. Der Dienstanbieter erhält den Inhalt Ihrer privaten CloudKit-Datenbank nicht über ein TimePro-Backend.",
+        "Premium-Käufe und -Wiederherstellungen werden von Apple über StoreKit verarbeitet. TimePro erhält Produkt-, Transaktions- und Berechtigungsinformationen, die zum Freischalten und Wiederherstellen von Premium-Funktionen benötigt werden, jedoch keine Daten Ihrer Zahlungskarte oder Bankverbindung.",
+        "Berichte und Exportdateien werden lokal erstellt. Wenn Sie das Teilen-Menü des Systems verwenden, werden die exportierten Informationen nur an die von Ihnen ausgewählte Anwendung, Person oder Dienstleistung gesendet. Nach der Weitergabe gelten die Datenschutzpraktiken des jeweiligen Empfängers.",
+        "Wenn Sie freiwillig den Support kontaktieren, öffnet TimePro Ihre E-Mail-App mit einem Entwurf, der Ihr Gerätemodell, Ihre iOS-Version, die Version der Anwendung, Regions- oder Spracheinstellungen und Ihre verfasste Nachricht enthalten kann. Die E-Mail wird erst gesendet, nachdem Sie dies veranlasst haben, und von Ihrem E-Mail-Anbieter sowie dem Support-Postfach des Dienstanbieters verarbeitet."
       ]
     },
     {
-      "title": "Was sind meine Widerspruchsrechte?",
+      "title": "Geräteberechtigungen und Sensordaten",
       "content": [
-        "Sie können jede Sammlung von Informationen durch die Anwendung einfach stoppen, indem Sie sie deinstallieren. Sie können die standardmäßigen Deinstallationsprozesse verwenden, die als Teil Ihres mobilen Geräts oder über den mobilen Anwendungsmarktplatz oder das Netzwerk verfügbar sein können."
+        "Die Anwendung fordert weder Ihren genauen noch Ihren ungefähren Standort an und greift nicht auf das Adressbuch des Systems, Fotos, Kamera, Mikrofon, Gesundheitsdaten oder Kalender zu. Personen, die in der Geburtstagsfunktion von TimePro angezeigt werden, sind Datensätze, die Sie manuell erstellen; sie werden nicht aus der Kontakte-App importiert."
+      ]
+    },
+    {
+      "title": "Speicherung und Löschung",
+      "content": [
+        "Lokale Einstellungen und Datensätze verbleiben auf Ihrem Gerät, bis Sie sie über die Anwendung löschen, das Gerät löschen oder die Anwendung deinstallieren. Davon unberührt bleiben Gerätesicherungen, die von Ihnen oder Apple verwaltet werden.",
+        "Durch die Deinstallation von TimePro werden die lokalen Daten auf diesem Gerät entfernt. Daten, die zuvor mit iCloud synchronisiert wurden, werden jedoch nicht automatisch gelöscht. Wenn Sie TimePro neu installieren und die iCloud-Synchronisierung mit demselben Apple Account erneut aktivieren, können diese Daten wieder heruntergeladen werden.",
+        "Um synchronisierte Daten zu löschen, verwenden Sie in den Einstellungen für die iCloud-Synchronisierung von TimePro die Option \"Deaktivieren und Cloud-Daten löschen\". Dadurch werden die CloudKit-Daten von TimePro aus Ihrer privaten iCloud-Datenbank sowie die synchronisierten Daten von Ihren anderen Geräten gelöscht. Sie können entsprechende iCloud-Daten auch über die von Apple bereitgestellten Bedienelemente verwalten.",
+        "Informationen, die Sie freiwillig exportieren, weitergeben oder per E-Mail versenden, werden gemäß Ihren Entscheidungen und den Richtlinien der von Ihnen ausgewählten Empfänger und Dienste gespeichert. Kopien außerhalb von TimePro werden nicht gelöscht, wenn Sie die Anwendung löschen oder deinstallieren."
       ]
     },
     {
       "title": "Kinder",
       "content": [
-        "Die Anwendung wird nicht dazu verwendet, wissentlich Daten von Kindern unter 13 Jahren zu erbitten oder an diese zu vermarkten. Der Dienstanbieter sammelt wissentlich keine persönlich identifizierbaren Informationen von Kindern. Der Dienstanbieter ermutigt alle Kinder, niemals persönlich identifizierbare Informationen über die Anwendung und/oder Dienste zu übermitteln. Der Dienstanbieter ermutigt Eltern und Erziehungsberechtigte, die Internetnutzung ihrer Kinder zu überwachen und bei der Durchsetzung dieser Richtlinie zu helfen, indem sie ihre Kinder anweisen, niemals persönlich identifizierbare Informationen über die Anwendung und/oder Dienste ohne ihre Erlaubnis bereitzustellen. Wenn Sie Grund zu der Annahme haben, dass ein Kind persönlich identifizierbare Informationen an den Dienstanbieter über die Anwendung und/oder Dienste bereitgestellt hat, wenden Sie sich bitte an den Dienstanbieter ({{email}}), damit die notwendigen Maßnahmen ergriffen werden können. Sie müssen auch mindestens 16 Jahre alt sein, um der Verarbeitung Ihrer persönlich identifizierbaren Informationen in Ihrem Land zuzustimmen (in einigen Ländern können wir Ihrem Elternteil oder Erziehungsberechtigten erlauben, dies in Ihrem Namen zu tun)."
+        "Die Anwendung richtet sich nicht an Kinder unter 13 Jahren, und der Dienstanbieter erhebt nicht wissentlich personenbezogene Daten von Kindern. Wenn Sie der Ansicht sind, dass ein Kind dem Dienstanbieter über eine Supportanfrage personenbezogene Daten übermittelt hat, wenden Sie sich bitte an {{email}}, damit geeignete Maßnahmen ergriffen werden können. Soweit erforderlich, müssen Eltern oder Erziehungsberechtigte eine nach lokalem Recht erforderliche Einwilligung erteilen."
       ]
     },
     {
       "title": "Sicherheit",
       "content": [
-        "Der Dienstanbieter ist darauf bedacht, die Vertraulichkeit Ihrer Informationen zu schützen. Da die Anwendung Daten hauptsächlich lokal auf Ihrem Gerät speichert und diese nicht automatisch überträgt, besteht ein minimales Risiko, dass Ihre Daten von unbefugten Personen eingesehen werden. Geräteinformationen, die in freiwilligen Support-E-Mails enthalten sind, werden unter Verwendung standardmäßiger E-Mail-Sicherheitsprotokolle übertragen und nur zur Bereitstellung von Kundenhilfe verwendet."
+        "Lokale Daten werden durch die Sicherheitsfunktionen Ihres Geräts geschützt. Wenn die iCloud-Synchronisierung aktiviert ist, werden synchronisierte Daten in Ihrer privaten CloudKit-Datenbank gespeichert und durch Apples iCloud-Sicherheitsmaßnahmen geschützt. Keine Speicherungs- oder Übertragungsmethode ist vollständig sicher, daher kann keine absolute Sicherheit garantiert werden."
       ]
     },
     {
-      "title": "Änderungen",
+      "title": "Änderungen dieser Erklärung",
       "content": [
-        "Diese Datenschutzerklärung kann von Zeit zu Zeit aus beliebigen Gründen aktualisiert werden. Der Dienstanbieter wird Sie über Änderungen an der Datenschutzerklärung informieren, indem diese Seite mit der neuen Datenschutzerklärung aktualisiert wird. Es wird empfohlen, diese Datenschutzerklärung regelmäßig auf Änderungen zu überprüfen, da die fortgesetzte Nutzung als Zustimmung zu allen Änderungen gilt."
+        "Diese Datenschutzerklärung kann aktualisiert werden, wenn sich die Funktionen oder Datenverarbeitungspraktiken der Anwendung ändern. Das unten angegebene Gültigkeitsdatum wird bei Veröffentlichung einer überarbeiteten Erklärung aktualisiert. Sie sollten diese Seite regelmäßig überprüfen."
       ]
     },
     {
-      "title": "Ihre Zustimmung",
+      "title": "Ihre Wahlmöglichkeiten und Einwilligung",
       "content": [
-        "Durch die Nutzung der Anwendung stimmen Sie der Verarbeitung Ihrer Informationen zu, wie in dieser Datenschutzerklärung dargelegt und wie vom Dienstanbieter geändert."
+        "Die iCloud-Synchronisierung ist optional. Sie können TimePro ausschließlich mit lokaler Speicherung nutzen, die Synchronisierung deaktivieren und die Cloud-Daten behalten oder die Synchronisierung deaktivieren und die Cloud-Daten löschen. Durch die Nutzung der Anwendung stimmen Sie der in dieser Datenschutzerklärung beschriebenen Verarbeitung von Informationen zu."
       ]
     },
     {
-      "title": "Kontaktieren Sie uns",
+      "title": "Kontakt",
       "content": [
-        "Wenn Sie Fragen bezüglich des Datenschutzes bei der Nutzung der Anwendung haben oder Fragen zu den Praktiken haben, wenden Sie sich bitte per E-Mail an den Dienstanbieter unter {{email}}."
+        "Wenn Sie Fragen zu dieser Datenschutzerklärung oder zur Datenverarbeitung durch TimePro haben, kontaktieren Sie den Dienstanbieter unter {{email}}."
       ]
     }
   ],
-  "footer": "Diese Datenschutzerklärung ist wirksam ab {{date}}"
+  "footer": "Diese Datenschutzerklärung gilt ab dem {{date}}."
 }

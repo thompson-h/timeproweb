@@ -308,99 +308,18 @@
     <script src="config.js"></script>
     <script>
         // Supported languages and their locale mappings
-        const SUPPORTED_LANGUAGES =         {
-                  "en": {
-                            "file": "en.json",
-                            "locale": "en-US"
-                  },
-                  "pt": {
-                            "file": "pt.json",
-                            "locale": "pt-BR"
-                  },
-                  "es": {
-                            "file": "es.json",
-                            "locale": "es-ES"
-                  },
-                  "ar": {
-                            "file": "ar.json",
-                            "locale": "ar-SA"
-                  },
-                  "zh-Hans": {
-                            "file": "zh-Hans.json",
-                            "locale": "zh-CN"
-                  },
-                  "zh-Hant": {
-                            "file": "zh-Hant.json",
-                            "locale": "zh-TW"
-                  },
-                  "da": {
-                            "file": "da.json",
-                            "locale": "da-DK"
-                  },
-                  "nl": {
-                            "file": "nl.json",
-                            "locale": "nl-NL"
-                  },
-                  "fi": {
-                            "file": "fi.json",
-                            "locale": "fi-FI"
-                  },
-                  "fr": {
-                            "file": "fr.json",
-                            "locale": "fr-FR"
-                  },
-                  "de": {
-                            "file": "de.json",
-                            "locale": "de-DE"
-                  },
-                  "hi": {
-                            "file": "hi.json",
-                            "locale": "hi-IN"
-                  },
-                  "id": {
-                            "file": "id.json",
-                            "locale": "id-ID"
-                  },
-                  "it": {
-                            "file": "it.json",
-                            "locale": "it-IT"
-                  },
-                  "ja": {
-                            "file": "ja.json",
-                            "locale": "ja-JP"
-                  },
-                  "ko": {
-                            "file": "ko.json",
-                            "locale": "ko-KR"
-                  },
-                  "no": {
-                            "file": "no.json",
-                            "locale": "nb-NO"
-                  },
-                  "pl": {
-                            "file": "pl.json",
-                            "locale": "pl-PL"
-                  },
-                  "ru": {
-                            "file": "ru.json",
-                            "locale": "ru-RU"
-                  },
-                  "sv": {
-                            "file": "sv.json",
-                            "locale": "sv-SE"
-                  },
-                  "th": {
-                            "file": "th.json",
-                            "locale": "th-TH"
-                  },
-                  "tr": {
-                            "file": "tr.json",
-                            "locale": "tr-TR"
-                  },
-                  "uk": {
-                            "file": "uk.json",
-                            "locale": "uk-UA"
-                  }
+        const SUPPORTED_LANGUAGES = {
+            "en": { "file": "en.json", "locale": "en-US" },
+            "zh-Hans": { "file": "zh-Hans.json", "locale": "zh-CN" },
+            "zh-Hant": { "file": "zh-Hant.json", "locale": "zh-TW" },
+            "fr": { "file": "fr.json", "locale": "fr-FR" },
+            "de": { "file": "de.json", "locale": "de-DE" },
+            "it": { "file": "it.json", "locale": "it-IT" },
+            "ja": { "file": "ja.json", "locale": "ja-JP" },
+            "ko": { "file": "ko.json", "locale": "ko-KR" },
+            "pt": { "file": "pt.json", "locale": "pt-BR" },
+            "ru": { "file": "ru.json", "locale": "ru-RU" },
+            "es": { "file": "es.json", "locale": "es-ES" }
         };
         
         let currentTranslation = null;
@@ -410,19 +329,25 @@
         // Function to detect user's preferred language
         function detectUserLanguage() {
             // Get browser language preference
-            const userLang = navigator.language || navigator.userLanguage;
-            const langCode = userLang.split('-')[0].toLowerCase();
-            
-            console.log('Browser language:', userLang, 'Language code:', langCode);
-            
-            // Check if we support this language
-            if (SUPPORTED_LANGUAGES[langCode]) {
-                console.log('Using supported language:', langCode);
-                return langCode;
+            const preferredLanguages = navigator.languages?.length
+                ? navigator.languages
+                : [navigator.language || navigator.userLanguage || 'en'];
+
+            for (const userLanguage of preferredLanguages) {
+                const normalizedLanguage = userLanguage.replace('_', '-').toLowerCase();
+
+                if (normalizedLanguage.startsWith('zh')) {
+                    const usesTraditionalChinese = /(?:hant|tw|hk|mo)/.test(normalizedLanguage);
+                    return usesTraditionalChinese ? 'zh-Hant' : 'zh-Hans';
+                }
+
+                const languageCode = normalizedLanguage.split('-')[0];
+                if (SUPPORTED_LANGUAGES[languageCode]) {
+                    return languageCode;
+                }
             }
-            
+
             // Default to English if not supported
-            console.log('Language not supported, defaulting to English');
             return 'en';
         }
         
@@ -460,15 +385,16 @@
         // Function to render content from translation
         function renderContent(translation) {
             document.documentElement.lang = translation.language;
-            
-            // Set RTL direction for Arabic
-            if (translation.language === 'ar') {
-                document.documentElement.dir = 'rtl';
-            } else {
-                document.documentElement.dir = 'ltr';
-            }
+            document.documentElement.dir = 'ltr';
             
             document.title = `TimePro ${translation.title}`;
+
+            const ui = translation.ui;
+            document.getElementById('heroBadge').textContent = ui.heroBadge;
+            document.getElementById('heroTitle').textContent = ui.heroTitle;
+            document.getElementById('heroDescription').textContent = ui.heroDescription;
+            document.getElementById('backButtonLabel').textContent = ui.backToSupport;
+            document.getElementById('backButton').setAttribute('aria-label', ui.backToSupportAriaLabel);
             
             const container = document.querySelector('.privacy-content');
             if (!container) return;
@@ -564,6 +490,7 @@
                 updateEffectiveDate();
                 updateLanguageSelector();
                 setupLanguageSelector();
+                updateCopyrightYear();
                 console.log('App initialized successfully');
             } catch (error) {
                 console.error('Failed to initialize app:', error);
@@ -576,6 +503,7 @@
                     updateEffectiveDate();
                     updateLanguageSelector();
                     setupLanguageSelector();
+                    updateCopyrightYear();
                     console.log('Fallback successful');
                 } catch (fallbackError) {
                     console.error('Failed to load fallback translation:', fallbackError);
@@ -595,6 +523,10 @@
                 });
             }
         }
+
+        function updateCopyrightYear() {
+            document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+        }
         
         // Start the application when DOM is loaded
         document.addEventListener('DOMContentLoaded', initializeApp);
@@ -606,44 +538,32 @@
         <div class="language-selector">
             <select class="language-dropdown" id="languageSelect">
                 <option value="en">English</option>
-                <option value="pt">Português</option>
-                <option value="es">Español</option>
-                <option value="ar">العربية</option>
                 <option value="zh-Hans">简体中文</option>
                 <option value="zh-Hant">繁體中文</option>
-                <option value="da">Dansk</option>
-                <option value="nl">Nederlands</option>
-                <option value="fi">Suomi</option>
                 <option value="fr">Français</option>
                 <option value="de">Deutsch</option>
-                <option value="hi">हिन्दी</option>
-                <option value="id">Bahasa Indonesia</option>
                 <option value="it">Italiano</option>
                 <option value="ja">日本語</option>
                 <option value="ko">한국어</option>
-                <option value="no">Norsk Bokmål</option>
-                <option value="pl">Polski</option>
+                <option value="pt">Português (Brasil)</option>
                 <option value="ru">Русский</option>
-                <option value="sv">Svenska</option>
-                <option value="th">ไทย</option>
-                <option value="tr">Türkçe</option>
-                <option value="uk">Українська</option>
+                <option value="es">Español</option>
             </select>
         </div>
         
         <section class="hero-section">
             <div class="hero-container">
-                <div class="hero-badge">PRIVACY POLICY</div>
-                <h1 class="hero-title">Your Privacy Matters</h1>
-                <p class="hero-description">Learn how TimePro protects your data and respects your privacy. All information is stored locally on your device.</p>
+                <div class="hero-badge" id="heroBadge">PRIVACY POLICY</div>
+                <h1 class="hero-title" id="heroTitle">Your Privacy Matters</h1>
+                <p class="hero-description" id="heroDescription">TimePro stores your data on your device. If you enable iCloud Sync, supported records are also stored in your private iCloud database.</p>
             </div>
         </section>
 
         <section class="content-section">
             <div class="content-container">
-                <a href="index.html" class="back-button" aria-label="Back to Support Page">
+                <a href="index.html" class="back-button" id="backButton" aria-label="Back to Support Page">
                     <span class="back-button-icon" aria-hidden="true">←</span>
-                    <span>Back to Support</span>
+                    <span id="backButtonLabel">Back to Support</span>
                 </a>
                 <div class="privacy-content">
                     <!-- Content will be loaded dynamically based on user's language preference -->
@@ -653,7 +573,7 @@
 
         <section class="footer-section">
             <div class="footer-container">
-                <p class="footer-text">© 2025 Thompson Costa Honorato</p>
+                <p class="footer-text">© <span id="copyrightYear">2026</span> Thompson Costa Honorato</p>
             </div>
         </section>
     </div>

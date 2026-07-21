@@ -2,80 +2,101 @@
   "language": "en",
   "languageName": "English",
   "title": "Privacy Policy",
-  "intro": "This privacy policy applies to the TimePro app (hereby referred to as \"Application\") for mobile devices that was created by Thompson Costa Honorato (hereby referred to as \"Service Provider\") as a Commercial service. This service is intended for use \"AS IS\".",
+  "ui": {
+    "heroBadge": "PRIVACY POLICY",
+    "heroTitle": "Your Privacy Matters",
+    "heroDescription": "TimePro stores your data on your device. If you enable iCloud Sync, supported records are also stored in your private iCloud database.",
+    "backToSupport": "Back to Support",
+    "backToSupportAriaLabel": "Back to Support Page"
+  },
+  "intro": "This Privacy Policy explains how the TimePro mobile application (the \"Application\"), created by Thompson Costa Honorato (the \"Service Provider\"), stores and handles information. TimePro is a commercial service provided on an \"AS IS\" basis.",
   "sections": [
     {
-      "title": "What information does the Application obtain and how is it used?",
+      "title": "What information does the Application handle?",
       "content": [
-        "The Application stores user preferences (settings) and calculation history locally on your device using UserDefaults. This data remains only on your device and is not transmitted to any external servers. This local data is used to provide the core functionality of the app, including saving your preferred settings and maintaining a history of your calculations.",
-        "For customer support purposes only, when you choose to contact support through the app's email feature, the following device information may be included in your support email to help us assist you better:",
+        "The Application stores the information you enter or generate while using its features:",
         {
           "type": "list",
           "items": [
-            "Device model (e.g., iPhone 15 Pro)",
-            "iOS version (e.g., iOS 17.0)",
-            "App version",
-            "Device locale/language settings"
+            "Preferences and configuration stored with UserDefaults, such as language, formatting, calculation, sound, haptic feedback, export, and synchronization choices.",
+            "Calculation history stored with Core Data, including expressions, results, intermediate steps, grouping information, and timestamps.",
+            "Work records stored with Core Data, including saved job names, hourly rates, currencies, default schedules and breaks, work dates and times, durations, payment status, payment records, archive status, and notes.",
+            "Birthday records stored with Core Data, including names, dates of birth, and notes."
           ]
         },
-        "This device information is only shared when you voluntarily send a support email and is used solely to provide technical assistance. No personal identifiers are collected or transmitted unless you choose to include them in your support message."
+        "Payment records are information you enter to organize work earnings and payments. TimePro does not request or store payment card numbers, bank account credentials, or other payment credentials."
       ]
     },
     {
-      "title": "Local Data Storage",
+      "title": "Local storage and optional iCloud Sync",
       "content": [
-        "The application stores preferences and calculation history locally on your device. This data is only accessible by the Application and is deleted when you uninstall the Application. No personal identifiers are associated with these data."
+        "TimePro stores your settings and records locally on your device so the Application can work without an account or a connection to a developer-operated server.",
+        "If iCloud Sync is available to you and you choose to enable it, the Core Data records described above are automatically uploaded to and downloaded from Apple's CloudKit service. They are stored in your private iCloud database and made available to devices signed in to the same Apple Account.",
+        "Preferences stored with UserDefaults are not part of TimePro's CloudKit synchronization.",
+        "If you disable iCloud Sync, you can choose either to keep the previously synchronized data in iCloud or to delete it from iCloud."
       ]
     },
     {
-      "title": "Does the Application collect precise real time location information of the device?",
+      "title": "How is information used?",
       "content": [
-        "This Application does not collect precise information about the location of your mobile device."
+        "The information is used only to provide Application functionality, including calculations, history, work and earnings records, birthday calculations, reports and exports, preference restoration, Premium entitlement management, and optional synchronization across your devices."
       ]
     },
     {
-      "title": "Do third parties see and/or have access to information obtained by the Application?",
+      "title": "Sharing and external services",
       "content": [
-        "No data is automatically shared with third parties. All user preferences and calculation history are stored locally on your device and are not transmitted elsewhere.",
-        "When you voluntarily send a support email through the app, device information (device model, iOS version, app version, and locale settings) may be included in your email to your email provider and to our support team. This information is only shared when you choose to contact support and is used exclusively for providing technical assistance."
+        "The Service Provider does not operate a server that receives the content of your locally stored records, does not include third-party advertising or analytics services in TimePro, and does not sell your data, use it for advertising, or use it to track you across apps or websites.",
+        "When iCloud Sync is enabled, Apple processes synchronized records through CloudKit on your behalf. Apple services may also process the technical identifiers and synchronization metadata required to operate and protect the service. The Service Provider does not receive the contents of your private CloudKit database through a TimePro backend.",
+        "Premium purchases and restorations are processed by Apple through StoreKit. TimePro receives product, transaction, and entitlement information needed to unlock and restore Premium features, but does not receive your payment card or banking details.",
+        "Reports and export files are generated locally. When you use the system share sheet, the exported information is sent only to the application, person, or service you select. That destination's privacy practices apply after you share it.",
+        "When you voluntarily contact support, TimePro opens your email application with a draft that may include your device model, iOS version, Application version, locale or language settings, and the message you write. The email is sent only after you choose to send it and is processed by your email provider and the Service Provider's support mailbox."
       ]
     },
     {
-      "title": "What are my opt-out rights?",
+      "title": "Device permissions and sensor data",
       "content": [
-        "You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes that may be available as part of your mobile device or via the mobile application marketplace or network."
+        "The Application does not request precise or approximate location and does not access your system address book, photos, camera, microphone, health data, or calendar. People shown in TimePro's birthday feature are records that you create manually; they are not imported from the Contacts application."
+      ]
+    },
+    {
+      "title": "Retention and deletion",
+      "content": [
+        "Local settings and records remain on your device until you delete them through the Application, erase the device, or uninstall the Application, subject to any device backups managed by you or Apple.",
+        "Uninstalling TimePro removes its local data from that device but does not automatically delete data that was previously synchronized to iCloud. If you reinstall TimePro and enable iCloud Sync again with the same Apple Account, that data may be downloaded again.",
+        "To delete synchronized data, use the \"Disable and Delete Cloud Data\" option in TimePro's iCloud Sync settings. This deletes TimePro's CloudKit data from your private iCloud database and removes the synchronized data from your other devices. You may also manage applicable iCloud data through the controls Apple provides.",
+        "Information that you voluntarily export, share, or send by email is retained according to the choices and policies of the recipients and services you selected. Copies outside TimePro are not deleted when you delete or uninstall the Application."
       ]
     },
     {
       "title": "Children",
       "content": [
-        "The Application is not used to knowingly solicit data from or market to children under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children. The Service Provider encourages all children to never submit any personally identifiable information through the Application and/or Services. The Service Provider encourages parents and legal guardians to monitor their children's Internet usage and to help enforce this Policy by instructing their children never to provide personally identifiable information through the Application and/or Services without their permission. If you have reason to believe that a child has provided personally identifiable information to the Service Provider through the Application and/or Services, please contact the Service Provider ({{email}}) so that they will be able to take the necessary actions. You must also be at least 16 years of age to consent to the processing of your personally identifiable information in your country (in some countries, we may allow your parent or guardian to do so on your behalf)."
+        "The Application is not directed to children under 13, and the Service Provider does not knowingly collect personal information from children. If you believe a child has sent personal information to the Service Provider through a support request, contact {{email}} so appropriate action can be taken. Where applicable, a parent or legal guardian must provide any consent required by local law."
       ]
     },
     {
       "title": "Security",
       "content": [
-        "The Service Provider is concerned about safeguarding the confidentiality of your information. Since the Application primarily stores data locally on your device and does not automatically transmit it, there is minimal risk of your data being accessed by unauthorized individuals. Device information included in voluntary support emails is transmitted using standard email security protocols and is only used for providing customer assistance."
+        "Local data is protected by the security features of your device. When iCloud Sync is enabled, synchronized data is stored in your private CloudKit database and protected by Apple's iCloud security measures. No storage or transmission method is completely secure, so absolute security cannot be guaranteed."
       ]
     },
     {
-      "title": "Changes",
+      "title": "Changes to this policy",
       "content": [
-        "This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to their Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes."
+        "This Privacy Policy may be updated when the Application's features or data practices change. The effective date shown below will be updated when a revised policy is published. You should review this page periodically."
       ]
     },
     {
-      "title": "Your Consent",
+      "title": "Your choices and consent",
       "content": [
-        "By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by the Service Provider."
+        "iCloud Sync is optional. You can use TimePro with local storage only, disable synchronization while keeping cloud data, or disable synchronization and delete cloud data. By using the Application, you consent to the handling of information as described in this Privacy Policy."
       ]
     },
     {
-      "title": "Contact Us",
+      "title": "Contact us",
       "content": [
-        "If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at {{email}}."
+        "If you have questions about this Privacy Policy or TimePro's data practices, contact the Service Provider at {{email}}."
       ]
     }
   ],
-  "footer": "This privacy policy is effective as of {{date}}"
+  "footer": "This Privacy Policy is effective as of {{date}}."
 }

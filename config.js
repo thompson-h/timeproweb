@@ -5,4 +5,4 @@
 const CONTACT_EMAIL = 'thompson.costa@icloud.com';
 
 // Effective date configuration
-const EFFECTIVE_DATE = new Date('2025-05-31');
+const EFFECTIVE_DATE = new Date(2026, 6, 21);

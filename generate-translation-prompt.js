@@ -4,26 +4,16 @@ const fs = require('fs').promises;
 const path = require('path');
 
 const LANGUAGE_NAMES = {
-    'ar': 'Arabic',
     'zh-Hans': 'Simplified Chinese', 
     'zh-Hant': 'Traditional Chinese',
-    'da': 'Danish',
-    'nl': 'Dutch',
-    'fi': 'Finnish',
     'fr': 'French',
     'de': 'German',
-    'hi': 'Hindi',
-    'id': 'Indonesian',
     'it': 'Italian',
     'ja': 'Japanese',
     'ko': 'Korean',
-    'no': 'Norwegian Bokmål',
-    'pl': 'Polish',
     'ru': 'Russian',
-    'sv': 'Swedish',
-    'th': 'Thai',
-    'tr': 'Turkish',
-    'uk': 'Ukrainian'
+    'pt': 'Brazilian Portuguese',
+    'es': 'Spanish'
 };
 
 async function generateTranslationPrompt(targetLang) {
@@ -69,17 +59,23 @@ async function listPendingTranslations() {
         const files = await fs.readdir('./translations');
         const existing = files.filter(f => f.endsWith('.json')).map(f => f.replace('.json', ''));
         
-        const pending = Object.keys(LANGUAGE_NAMES).filter(lang => {
-            if (!existing.includes(lang)) return true;
-            
-            // Check if it's a template (contains [TRANSLATION NEEDED])
-            try {
-                const content = fs.readFileSync(`./translations/${lang}.json`, 'utf8');
-                return content.includes('[TRANSLATION NEEDED]');
-            } catch {
-                return true;
+        const pending = [];
+
+        for (const lang of Object.keys(LANGUAGE_NAMES)) {
+            if (!existing.includes(lang)) {
+                pending.push(lang);
+                continue;
             }
-        });
+
+            try {
+                const content = await fs.readFile(`./translations/${lang}.json`, 'utf8');
+                if (content.includes('[TRANSLATION NEEDED]')) {
+                    pending.push(lang);
+                }
+            } catch {
+                pending.push(lang);
+            }
+        }
         
         if (pending.length > 0) {
             console.log('📋 Languages needing translation:');
