@@ -7,7 +7,8 @@
     "heroTitle": "您的隱私至關重要",
     "heroDescription": "TimePro 會將您的資料儲存在您的裝置上。如果您啟用 iCloud 同步，支援同步的記錄也會儲存在您的 iCloud 私有資料庫中。",
     "backToSupport": "返回支援",
-    "backToSupportAriaLabel": "返回支援頁面"
+    "backToSupportAriaLabel": "返回支援頁面",
+    "termsOfUse": "使用條款"
   },
   "intro": "本隱私權政策說明由 Thompson Costa Honorato（以下簡稱「服務提供者」）建立的 TimePro 行動應用程式（以下簡稱「應用程式」）如何儲存及處理資訊。TimePro 是一項按「現狀」提供的商業服務。",
   "sections": [

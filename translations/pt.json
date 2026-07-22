@@ -7,7 +7,8 @@
     "heroTitle": "Sua privacidade importa",
     "heroDescription": "O TimePro armazena seus dados no dispositivo. Se você ativar a Sincronização do iCloud, os registros compatíveis também serão armazenados no seu banco de dados privado do iCloud.",
     "backToSupport": "Voltar ao suporte",
-    "backToSupportAriaLabel": "Voltar à página de suporte"
+    "backToSupportAriaLabel": "Voltar à página de suporte",
+    "termsOfUse": "Termos de Uso"
   },
   "intro": "Esta Política de Privacidade explica como o aplicativo móvel TimePro (o \"Aplicativo\"), criado por Thompson Costa Honorato (o \"Provedor de Serviços\"), armazena e trata informações. O TimePro é um serviço comercial fornecido no estado em que se encontra.",
   "sections": [

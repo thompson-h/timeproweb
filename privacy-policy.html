@@ -184,6 +184,7 @@
         }
 
         .footer-text a {
+            display: inline-block;
             color: var(--primary-color);
             text-decoration: none;
         }
@@ -395,6 +396,7 @@
             document.getElementById('heroDescription').textContent = ui.heroDescription;
             document.getElementById('backButtonLabel').textContent = ui.backToSupport;
             document.getElementById('backButton').setAttribute('aria-label', ui.backToSupportAriaLabel);
+            document.getElementById('termsOfUseLink').textContent = ui.termsOfUse;
             
             const container = document.querySelector('.privacy-content');
             if (!container) return;
@@ -573,7 +575,7 @@
 
         <section class="footer-section">
             <div class="footer-container">
-                <p class="footer-text">© <span id="copyrightYear">2026</span> Thompson Costa Honorato</p>
+                <p class="footer-text">© <span id="copyrightYear">2026</span> Thompson Costa Honorato · <a id="termsOfUseLink" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms of Use</a></p>
             </div>
         </section>
     </div>

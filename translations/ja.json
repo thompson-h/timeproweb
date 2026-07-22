@@ -7,7 +7,8 @@
     "heroTitle": "お客様のプライバシーを大切にします",
     "heroDescription": "TimeProはお客様のデータをデバイスに保存します。iCloud同期を有効にすると、対応する記録はお客様のiCloudプライベートデータベースにも保存されます。",
     "backToSupport": "サポートに戻る",
-    "backToSupportAriaLabel": "サポートページに戻る"
+    "backToSupportAriaLabel": "サポートページに戻る",
+    "termsOfUse": "利用規約"
   },
   "intro": "このプライバシーポリシーは、Thompson Costa Honorato（以下「サービス提供者」）が作成したTimeProモバイルアプリケーション（以下「本アプリ」）における情報の保存および取り扱いについて説明するものです。TimeProは「現状有姿」で提供される商用サービスです。",
   "sections": [

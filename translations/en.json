@@ -7,7 +7,8 @@
     "heroTitle": "Your Privacy Matters",
     "heroDescription": "TimePro stores your data on your device. If you enable iCloud Sync, supported records are also stored in your private iCloud database.",
     "backToSupport": "Back to Support",
-    "backToSupportAriaLabel": "Back to Support Page"
+    "backToSupportAriaLabel": "Back to Support Page",
+    "termsOfUse": "Terms of Use"
   },
   "intro": "This Privacy Policy explains how the TimePro mobile application (the \"Application\"), created by Thompson Costa Honorato (the \"Service Provider\"), stores and handles information. TimePro is a commercial service provided on an \"AS IS\" basis.",
   "sections": [
